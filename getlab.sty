@@ -1,0 +1,141 @@
+\typeout{GET-Labor Style File, SS 2008} %
+\typeout{(c) IGTE, 2016} %
+%---------------------------------------------------------
+% Teile der hier verwendeten Makros basieren auf dem
+% Buch `Der LaTeX Begleiter' von M. Goossens, F. Mittelbach
+% und A. Samarin.
+%---------------------------------------------------------
+%
+\usepackage[latin1]{inputenc}
+\usepackage[german]{babel}
+%
+\usepackage{amsmath}                    % Mathematical symbols
+\usepackage{amssymb}                    % Mathematical symbols
+\usepackage{amsfonts}                   % Mathematical symbols
+\usepackage{mathrsfs}                   % Symbols für Fourier und Laplace Transform
+\usepackage{eufrak}                     % Fraktur Symbole
+\usepackage{multirow}                   % tall tables
+%
+\usepackage{graphicx}                   % eps graphics support
+%
+% layout
+%
+\setlength{\topmargin}{1pt} \setlength{\headheight}{0.3cm}
+\setlength{\textwidth}{15.75cm} \setlength{\textheight}{23cm}
+\setlength{\oddsidemargin}{1cm} \setlength{\evensidemargin}{1cm}
+\setlength{\headsep}{2pt} \setlength{\parindent}{0pt}
+\setlength{\marginparwidth}{80pt} \pagestyle{plain}
+%
+% Enumerations
+%
+\renewcommand{\theenumi}{\arabic{enumi}}    % erste Ebene
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\theenumii}{\alph{enumii}}    % zweite Ebene
+\renewcommand{\labelenumii}{\theenumii.}
+\renewcommand{\theenumiii}{\roman{enumiii}} % dritte Ebene
+\renewcommand{\labelenumiii}{\theenumiii.}
+%
+% Marginailen
+%
+\newcommand{\marginlabel}[1]%
+ {\mbox{}\marginpar{\raggedleft\hspace{0pt}#1}}
+%
+% new commands
+%
+\newcommand{\DocumentChapter}[1]{\chapter{#1} \ \minitoc \ \clearpage}
+\newcommand{\Kapitel}[1]{\chapter{#1} \ }
+%
+\newcommand{\GETHeader}[9]{%
+\begin{titlepage}
+\pagestyle{empty} \enlargethispage*{25cm}\samepage{
+\vspace*{-2.5cm}
+\begin{center}
+%
+\begin{tabular}[b]{lr}
+%
+\hspace*{-1.5cm}
+\begin{tabular}{p{3.8cm}}
+\includegraphics[width=3.8cm]{./Figures/TUGraz}
+\end{tabular}
+%
+\hspace*{-1cm}
+%
+%
+\begin{tabular}{p{13.8cm}}
+\begin{flushright}
+\large
+Institut für Elektrische Meßtechnik und Meßsignalverarbeitung\\
+Institut für Grundlagen und Theorie der Elektrotechnik\\
+Institut für Elektrische Antriebstechnik und Maschinen\\
+~\\
+\end{flushright}
+\end{tabular}
+\end{tabular}
+
+\vspace*{2.2cm}
+%
+\Huge {Grundlagen der Elektrotechnik, Labor\\} %
+\vspace*{.5cm} \Large{ Sommersemester 2016\\}
+%
+\vspace*{1.5cm}
+
+\Huge{\textbf{#1}\\}
+
+%
+\vspace*{0.8cm} \Large{Übungsdatum: {#2}\\}
+%
+\vspace*{1cm} \vfill
+%
+\Large{Gruppe: {#3}\\} \vspace*{0.5cm}%
+
+
+\Large{Protokollführer: {#4}\\} \vspace*{1cm}
+
+\Large{Laborteilnehmer:\\} \vspace*{.1cm}
+% Name der beteiligten Studierenden
+\Large{#5} \vspace{1cm}
+%
+%
+\Large{Laborleiter: #6\\} \vspace*{.1cm}   %\vspace*{1.5cm}
+\Large{Betreuer: #7\\} \vspace*{1.5cm}
+%
+\Large{#8, am #9}
+\end{center}}%
+%
+\clearpage
+\end{titlepage}}
+%
+% Some new symbols
+%
+\renewcommand{\j}{\ensuremath{\mathrm{j}}} % Imaginary Unit
+\newcommand{\conj}[1]{\ensuremath{{#1}^\ast}} %Complex Conjugate
+\renewcommand{\c}[1]{\ensuremath{\boldsymbol{#1}}} % Complex Boldface
+%
+\newcommand{\E}[1]{\ensuremath{\mathrm{E}\{ {#1} \}}} % Expectation E{*}
+%
+\newcommand{\F}[1]{\ensuremath{\mathcal{F}\{ {#1} \}}} % Fourier F{*}
+\newcommand{\Fi}[1]{\ensuremath{\mathcal{F}^{-1}\{ {#1} \}}} % Fourier F{*}
+%
+\renewcommand{\L}[1]{\ensuremath{\mathcal{L}\{ {#1} \}}} % Laplace F{*}
+\newcommand{\Li}[1]{\ensuremath{\mathcal{L}^{-1}\{ {#1} \}}} % Laplace F{*}
+%
+\newcommand{\e}[1]{\ensuremath{\mathrm{e}^{#1}}} % Exponential e^*
+%\newcommand{\e}[1]{\ensuremath{\exp{ \left[ {#1} \right] }}} % Exponential exp{*}
+%
+\renewcommand{\o}[1]{\ensuremath{\overline{#1}}} % Overline
+%
+\newcommand{\abs}[1]{\ensuremath{ | {#1} | }} % Absolut |a|
+\newcommand{\norm}[1]{\ensuremath{ \| {#1} \| }} % Norm ||a||
+\newcommand{\avg}[1]{\ensuremath{ < {#1} > }} % Time Average <a>
+\newcommand{\sign}{\ensuremath{\mathrm{sign}\,}} % Signum function: sign
+%
+\newcommand{\N}[1]{\ensuremath{\mathbb{N}}} % Natural
+\newcommand{\R}[1]{\ensuremath{\mathbb{R}}} % Real
+\newcommand{\C}[1]{\ensuremath{\mathbb{C}}} % Complex
+\newcommand{\Z}[1]{\ensuremath{\mathbb{Z}}} % Whole numbers
+\newcommand{\Q}[1]{\ensuremath{\mathbb{Q}}} % Irrational
+%
+\newcommand{\inti}{\ensuremath{\int_{0}^{\,\infty}}} % int 0 to infty
+\newcommand{\intii}{\ensuremath{\int_{-\infty}^{\,\infty}}} % int -infty to infty
+\newcommand{\iintii}{\ensuremath{\iint_{-\infty}^{\quad\infty}}} % int -infty to infty
+%
